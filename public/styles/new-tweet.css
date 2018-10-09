@@ -1,0 +1,39 @@
+.container {
+    padding-bottom: 4em;
+}
+
+
+.new-tweet {
+    border-radius: 25px;
+    background-color: lightgray;
+    padding-top: .5em;
+    padding-bottom: .5em;
+
+}
+
+.new-tweet h2 {
+    border-bottom: 1px solid black;
+    width: 95%; 
+    margin-left: 2.5%;
+    text-align: left; 
+    
+}
+
+.new-tweet span {
+  
+
+}
+
+.new-tweet .flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 .5rem;
+  
+}
+
+  .container textarea {
+    padding: 5px;
+    box-sizing: border-box;
+    width: 50%;
+    }
+

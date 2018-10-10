@@ -108,3 +108,27 @@
         .tweet {
             padding: 7px
         }
+
+        #button:hover {
+            opacity: .5;
+        }
+
+        #button {
+            position:absolute;
+            transition: .5s ease;
+            top: 0%;
+            left: 90%;
+            border-radius: 4px; 
+            margin-top: .8em;
+            height: 40px; 
+        }
+
+        .c-error  {
+            display:none;
+            background: #c51244 !important;
+            padding: 10px !important;
+            border-radius: 0 !important;
+            position: relative; 
+            box-shadow: 1px 1px 1px #aaaaaa;
+            margin-top: 10px;
+          }

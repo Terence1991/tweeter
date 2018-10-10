@@ -78,29 +78,29 @@ const data = [
  function createTweetElement(tweet) {
      const tweet$ = $("<article>").addClass("tweet");
      const header$ = $("<header>").addClass("clearfix");
-     const img$ = $("<img>").addClass();
+     const img$ = $("<img>").addClass("image");
      const handle$ = $("<div>").addClass("handle");
      const name$ = $("<div>").addClass("name");
      const tweetTxt$ = $("<p>").addClass("content");
      const time$ = $("<footer>").addClass("date");
 
+ tweet$.append(header$, img$, handle$, name$, tweetTxt$, time$)
+
+  
+   tweet$.find('.clearfix').text(tweet.user.name);
+   tweet$.find('.image').attr('src',tweet.user.avatars.large);
+   tweet$.find('.handle').text(tweet.user.handle);
+   tweet$.find('.name').text(tweet.user.name);
+   tweet$.find('.content').text(tweet.content.text);
+   tweet$.find('.date').text(tweet.user.created_at)
 
 
-  $("<header>").text(tweet.user.name).appendTo(header$);
-
-  $("<img>").text(tweet.user.avatars.small).appendTo(img$);
+  // $("<p>").text(tweet.content.text).appendTo(tweetTxt$);
 
 
-  $("<div>").text(tweet.user.handle).appendTo(handle$);
-
-  $("<div>").text(tweet.user.name).appendTo(name$);
-
-  $("<p>").text(tweet.user.content).appendTo(tweetTxt$);
+  // $("<p>").text(tweet.user.created_at).appendTo(time$);
 
 
-  $("<p>").text(tweet.user.created_at).appendTo(time$);
-
-  tweet$.append(header$, img$, handle$, name$, tweetTxt$, time$)
 
   return tweet$;  
   }
@@ -112,20 +112,63 @@ console.log($tweet); // to see what it looks like
  // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
 
-renderTweets(data);
-
-
+//renderTweets(data);
+function validateForm(text) {
+  var errorMessage = "";
+  if(text > 140) {
+    errorMessage = "Too many characters in your tweet"
+  } else if(text === "") {
+    errorMessage = "Nothing inputed"
+  }
+ return errorMessage;
+}
 
 
 function renderTweets(data) {
   data.forEach(function(el) {
     var tweet1$ = createTweetElement(el);
-    $('#tweet-container').append(tweet1$);
+    $('#tweet-container').prepend(tweet1$);
   })
 }
 
 
+
+$('#tweet-form').on('submit', function(evt) {
+  evt.preventDefault()
+  const textValue = $(this).find('textarea').val();
+  const errorMessage = validateForm(textValue);
+  if(errorMessage) {
+    $(".c-error").show().slideDown();
+    console.log("This is working", $(this).find(".error-message"), errorMessage)
+    $(".error-message").text(errorMessage);
+  } else {
+    $(".c-error").hide().slideUp();
+    $.ajax("/tweets", { method: 'POST', data: $(this).serialize()})
+    .then(function() {
+      loadTweet();
+
+    });   
+  }
+ });
+ loadTweet()  
+
+
+
+ $('#button').on('click', function() {
+$('.new-tweet').slideToggle(400);
+$( "#textarea" ).focus();
 });
 
 
+ function loadTweet() {
+  $.ajax( {url: "/tweets", method: 'GET'})
+  .then(function(tweets) {
+    renderTweets(tweets); 
+  });
+};
 
+
+
+
+
+});

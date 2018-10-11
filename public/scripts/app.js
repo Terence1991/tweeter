@@ -78,21 +78,17 @@ const data = [
  function createTweetElement(tweet) {
      const tweet$ = $("<article>").addClass("tweet");
      const header$ = $("<header>").addClass("clearfix");
-     const img$ = $("<img>").addClass("image");
-     const handle$ = $("<div>").addClass("handle");
-     const name$ = $("<div>").addClass("name");
-     const tweetTxt$ = $("<p>").addClass("content");
-     const time$ = $("<footer>").addClass("date");
+     const img$ = $("<img>").addClass("image").attr('src',tweet.user.avatars.large);
+     const handle$ = $("<div>").addClass("handle").text(tweet.user.handle);
+     const name$ = $("<div>").addClass("name").text(tweet.user.name);
+     const tweetTxt$ = $("<p>").addClass("content").text(tweet.content.text);
+     const time$ = $("<footer>").addClass("date").text(tweet.created_at);
 
- tweet$.append(header$, img$, handle$, name$, tweetTxt$, time$)
+     header$.append(img$, name$, handle$)
 
+ tweet$.append(header$, tweetTxt$, time$)
+console.log(tweet$)
   
-   tweet$.find('.clearfix').text(tweet.user.name);
-   tweet$.find('.image').attr('src',tweet.user.avatars.large);
-   tweet$.find('.handle').text(tweet.user.handle);
-   tweet$.find('.name').text(tweet.user.name);
-   tweet$.find('.content').text(tweet.content.text);
-   tweet$.find('.date').text(tweet.user.created_at)
 
 
   // $("<p>").text(tweet.content.text).appendTo(tweetTxt$);

@@ -1,5 +1,11 @@
+$font-stack: Helvetica, sans-serif;
+
 .container {
     padding-bottom: 4em;
+}
+
+.tweet {
+    margin-bottom: 10px;
 }
 
 
@@ -41,11 +47,17 @@
     #tweet-container {
         margin: 2em;
         text-align: left;
+        margin-top: 10px;
+        padding-top; 20
         
     }
 
-    #tweet-container:hover  {
-        opacity: 0.5;
+    .tweet {
+        opacity: .5;
+    }
+
+    .tweet:hover  {
+        opacity: 1;
     }
 
    #tweet-container article {
@@ -54,7 +66,6 @@
         border-color: slategray;
         border-radius: 14px;
         overflow: hidden;
-         
     
 
     }
@@ -84,7 +95,7 @@
      }
 
      #tweet-container .handle {
-        font-size: 15px;
+        font-size: 10px;
         float: right; 
         color: darkgray;
     
@@ -123,6 +134,7 @@
             height: 40px; 
         }
 
+    
         .c-error  {
             display:none;
             background: #c51244 !important;
@@ -132,3 +144,22 @@
             box-shadow: 1px 1px 1px #aaaaaa;
             margin-top: 10px;
           }
+
+
+        article footer {
+            display: flex;
+            justify-content: space-between; 
+
+        } 
+
+      .tweet:hover .icons { 
+            opacity: 1; 
+        }
+
+        .icons {
+            opacity: 0;
+        }
+
+        i {
+            padding-left: 10px;
+        }

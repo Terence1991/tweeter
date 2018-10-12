@@ -73,8 +73,6 @@ const data = [
 
 
 
-
-
  function createTweetElement(tweet) {
      const tweet$ = $("<article>").addClass("tweet");
      const header$ = $("<header>").addClass("clearfix");
@@ -82,20 +80,20 @@ const data = [
      const handle$ = $("<div>").addClass("handle").text(tweet.user.handle);
      const name$ = $("<div>").addClass("name").text(tweet.user.name);
      const tweetTxt$ = $("<p>").addClass("content").text(tweet.content.text);
-     const time$ = $("<footer>").addClass("date").text(tweet.created_at);
+     const footer$ = $("<footer>")
+     const time$ = $("<div>").addClass("date").text(moment(tweet.created_at).fromNow()); 
+     const span$ = $('<span>').addClass('icons')
+     const icon1$ = $("<i>").addClass("fas fa-heart")
+     const icon2$ = $("<i>").addClass("fas fa-flag")
+     const icon3$ = $("<i>").addClass("fas fa-retweet")
 
-     header$.append(img$, name$, handle$)
+span$.append(icon1$, icon2$, icon3$);
+header$.append(img$, name$, handle$)
+footer$.append(time$, span$);
+tweet$.append(header$, tweetTxt$, footer$)
 
- tweet$.append(header$, tweetTxt$, time$)
 console.log(tweet$)
   
-
-
-  // $("<p>").text(tweet.content.text).appendTo(tweetTxt$);
-
-
-  // $("<p>").text(tweet.user.created_at).appendTo(time$);
-
 
 
   return tweet$;  

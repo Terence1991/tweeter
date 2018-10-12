@@ -22,4 +22,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screen Shots
 
-https://github.com/Terence1991/tweeter/blob/master/docs/Tweeter.png
+["Screen shot of tweeter"](https://github.com/Terence1991/tweeter/blob/master/docs/Tweeter.png)
+
+
+["Picture of tweeter with cursor"](https://github.com/Terence1991/tweeter/blob/master/docs/tweeter.png)

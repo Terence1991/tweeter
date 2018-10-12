@@ -140,6 +140,7 @@ $('#tweet-form').on('submit', function(evt) {
     $.ajax("/tweets", { method: 'POST', data: $(this).serialize()})
     .then(function() {
       loadTweet();
+      $( "#textarea").val('')
 
     });   
   }
@@ -151,6 +152,7 @@ $('#tweet-form').on('submit', function(evt) {
  $('#button').on('click', function() {
 $('.new-tweet').slideToggle(400);
 $( "#textarea" ).focus();
+$( "#textarea").val('')
 });
 
 

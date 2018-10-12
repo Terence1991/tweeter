@@ -18,3 +18,8 @@ This repository is the starter code for the project: Students will fork and clon
 -express
 -mongodb
 -node
+
+
+## Screen Shots
+
+https://github.com/Terence1991/tweeter/blob/master/docs/Tweeter.png

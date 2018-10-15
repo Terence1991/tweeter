@@ -13,5 +13,16 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
-- Express
-- Node 5.10.x or above
+-body-parser
+-chance
+-express
+-mongodb
+-node
+
+
+## Screen Shots
+
+["Screen shot of tweeter"](https://github.com/Terence1991/tweeter/blob/master/docs/Tweeter.png)
+
+
+["Picture of tweeter with cursor"](https://github.com/Terence1991/tweeter/blob/master/docs/tweeter.png)

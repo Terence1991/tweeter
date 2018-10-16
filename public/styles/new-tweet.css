@@ -108,41 +108,41 @@
 }
 
 #button {
-    position:absolute;
-    transition: .5s ease;
-    top: 0%;
-    left: 90%;
-    border-radius: 4px; 
-    margin-top: .8em;
-    height: 40px; 
+  position:absolute;
+  transition: .5s ease;
+  top: 0%;
+  left: 90%;
+  border-radius: 4px; 
+  margin-top: .8em;
+  height: 40px; 
 }
 
 
 .error-msg  {
-    display:none;
-    background: #c51244 !important;
-    padding: 10px !important;
-    border-radius: 0 !important;
-    position: relative; 
-    box-shadow: 1px 1px 1px #aaaaaa;
-    margin-top: 10px;
-  }
+  display:none;
+  background: #c51244 !important;
+  padding: 10px !important;
+  border-radius: 0 !important;
+  position: relative; 
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin-top: 10px;
+}
 
 
 article footer {
-    display: flex;
-    justify-content: space-between; 
+  display: flex;
+  justify-content: space-between; 
 
 } 
 
-  .tweet:hover .icons { 
-      opacity: 1; 
-  }
+.tweet:hover .icons { 
+  opacity: 1; 
+}
 
-  .icons {
-      opacity: 0;
-  }
+.icons {
+  opacity: 0;
+}
 
-  i {
-      padding-left: 10px;
-  }
+i {
+  padding-left: 10px;
+}

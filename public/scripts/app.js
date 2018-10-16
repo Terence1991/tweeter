@@ -55,7 +55,8 @@ $(document).ready(function() {
       $('#tweet-container').prepend(tweet);
     });
   }
-
+  
+  //Generate tweet and handles errors 
   $('#tweet-form').on('submit', function (evt) {
     evt.preventDefault();
     const tweetContent = $(this).find('textarea').val();
